@@ -1,0 +1,9 @@
+{
+    "coins": 15,
+    "health": 80,
+    "lives": 8,
+    "powerUps": [
+        0
+    ],
+    "lastLevel": "Scenes/JSON + PlayerPrefs Example/Game"
+}
