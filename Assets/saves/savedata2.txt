@@ -3,5 +3,5 @@
     "health": 100,
     "lives": 3,
     "powerUps": [],
-    "lastLevel": "Scenes/JSON + PlayerPrefs Example/Game"
+    "lastLevel": "Scenes/JSON + PlayerPrefs Example/Game 3"
 }

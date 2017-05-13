@@ -4,21 +4,7 @@ using EX2;
 
 public class GameTest : MonoBehaviour {
 
-    private static GameTest _instance;
     private string saveData = "NOT LOADED";
-    void Awake() {
-        Debug.Log("Awake");
-        if (_instance == null) {
-            gameObject.name = "[Game Test Instance]";
-            DontDestroyOnLoad(gameObject);
-            _instance = this;
-        }
-
-        if (this != _instance) {
-            Destroy(gameObject);
-        }
-
-    }
 
     void Start() {
         Debug.Log("Start");
@@ -79,15 +65,11 @@ public class GameTest : MonoBehaviour {
             DataService.Instance.WriteSaveData();
         }
         if(GUI.Button(new Rect(340,130,120,30), "Load next Level")) {
-            //TODO:
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex + 1);
         }
         if(GUI.Button(new Rect(340,170,160,30), "Return to Main Menu")) {
             SceneManager.LoadScene("Main Menu");
-            SceneManager.sceneLoaded += (scene, mode) => {
-                if(_instance == this) {
-                    Destroy(gameObject);
-                }
-            };
         }
     }
 }

@@ -31,14 +31,18 @@ The saved data is loaded every time the scene is loaded.
 
 **How to run**
 
+* Make sure `MuteTogleHandler` and `VolumeSliderHandler` use `EX1.DataService`.
 * Open "Settings" and press play.
 * You can make changes and press "Reload Scene." Your changes will persist, even if you stop and play again the scene.
+* The main menu will not work when this example is activated.
+* To delete all PlayerPrefs you can use Edit/Clear All PlayerPrefs on the Editor's menu.
 
 **Relevant files**
 
 * "Settings" scene
 * Scripts in `Player Prefs Example`
-* **Note** `DataService.cs` is a singleton that is shared between this example and the JSON example, they are both namespaced `EX1` and `EX2` respectively. `EX2` is an extension of this class so it build on top of the behavior in this example. I left `EX1` here because it depicts the only code needed to make the PlayerPrefs work.  
+
+**Note** `DataService.cs` is a singleton that is shared between this example and the JSON example, they are both namespaced `EX1` and `EX2` respectively. `EX2` is an extension of this class so it build on top of the behavior in this example. I left `EX1` here because it depicts the only code needed to make PlayerPrefs work.
 
 ### JSON Serialization
 
@@ -48,8 +52,9 @@ The user can modify their stats and change the level they are currently in.
 
 **How to run**
 
-* Open "Main Menu" scene and press play
-* You can go to settings and modify the audio (saved in PlayerPrefs)
+* * Make sure `MuteTogleHandler` and `VolumeSliderHandler` use `EX2.DataService`.
+* Open "Main Menu" scene and press play.
+* You can go to settings and modify the audio (saved in PlayerPrefs).
 * Click in the slots and modify the stats using the buttons. You can explicity save or let it auto-save when you return to the main menu.
 
 **Relevant files**

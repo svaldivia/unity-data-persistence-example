@@ -25,7 +25,7 @@ namespace EX1 {
         public PlayerPrefsHandler prefs { get; private set; }
 
         void Awake () {
-            if (Instance != this) {
+            if (Instance != this || FindObjectOfType<EX2.DataService>()) {
                 Destroy(this);
             } else {
                 DontDestroyOnLoad(gameObject);

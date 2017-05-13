@@ -30,7 +30,7 @@ namespace EX2 {
         public PlayerPrefsHandler prefs { get; private set; }
 
         void Awake () {
-            if (Instance != this) {
+            if (Instance != this || FindObjectOfType<EX1.DataService>()) {
                 Destroy(this);
             } else {
                 DontDestroyOnLoad(gameObject);
